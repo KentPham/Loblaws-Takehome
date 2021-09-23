@@ -48,7 +48,7 @@ exports.updateProductById = async (productId, update) => {
         }
         const params = Object.keys(update);
         const allowedFields = ["upc", "name", "count", "type", "price"];
-        const isValidUpdate = params.every((param) => allowedFields.includes(param));
+        const isValidUpdate = params.every((param) => allowedFields.includes(param)); //  Check if given attributes are valid
 
         if (isValidUpdate) {
             const response = await Product.findByIdAndUpdate(productId, update);
@@ -101,7 +101,7 @@ exports.updateProductByUpc = async (upc, update) => {
     try {
         const params = Object.keys(update);
         const allowedFields = ["upc", "name", "count", "type", "price"];
-        const isValidUpdate = params.every((param) => allowedFields.includes(param));
+        const isValidUpdate = params.every((param) => allowedFields.includes(param)); //  Check if given attributes are valid
 
         if (!/^\d+$/.test(upc)) {
             return "Invalid upc code";

@@ -191,7 +191,7 @@ exports.getPrice = async (orderId) => {
 
 exports.newOrder = async (body) => {
     try {
-        if (body.productId.length !== body.quantity.length){
+        if (body.productId.length !== body.quantity.length) {
             return "The number of products and number of quantities given do not match";
         }
         const newOrder = new Order({
